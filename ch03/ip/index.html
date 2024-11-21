@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rco123.github.io/man_jetson_nano_bd/ch03/ip/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>3.3 IP주소 - 젯슨나노보드4G</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra_css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3.3 IP\uc8fc\uc18c";
+        var mkdocs_page_input_path = "ch03\\ip.md";
+        var mkdocs_page_url = "/man_jetson_nano_bd/ch03/ip/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 젯슨나노보드4G
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">1.젯슨나노보드</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch01/intro_jetson_nano_bd/">1.1 소개</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch01/connect/">1.2 보드 IP 연결</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch01/program/">1.3 연결프로그램</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">2. 프로그램 작성</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch02/python/">2.1 파이썬</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch02/pytorch/">2.2 파이토치</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch02/tf/">2.3 텐스플로우</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">3. 지원기능</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../share/">3.1 파일공유</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../camera/">3.2 카메라</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">3.3 IP주소</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">젯슨나노보드4G</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">3. 지원기능</li>
+      <li class="breadcrumb-item active">3.3 IP주소</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ip">IP 주소표시</h1>
+<p>젯슨 보드에 OLED 0.96인치 디스플레이를 통해서 현재 설정되어 있는 IP 주소를 확인</p>
+<p>젯슨 보드는 부팅 후, 현제 설정된 IP 주소를 표시한다. </p>
+<p>USB로 케이블이 연결 된 경우는 192.168.55.1 으로 기본 주소를 표시하여 주며, 무선으로 IP 주소를 설정된
+경우는 해당 192.168.XX.XX 로 표시된다.</p>
+<p>무선의 경우 한번 설정이 되면, 재 부팅하여도, 해당 주소를 유지하고 있으며, 한번 설정후에는 반복해서 설정과정이 필요없게 된다.</p>
+<p>부팅후 젯슨 보드에 설정된 IP 주소를 확인하고 터미널 또는 웹브라우즈를 통한 iBlock 프로그램을 수행할 수 있다.</p>
+<div style="height:20px"></div>
+
+<p><center>
+<img  src="../../ch03/imgs/ipoled.png"  width="400"  height="400" /> 
+</center></p>
+<div style="height:40px"></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../camera/" class="btn btn-neutral float-left" title="3.2 카메라"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../camera/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

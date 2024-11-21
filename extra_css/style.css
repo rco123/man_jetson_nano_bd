@@ -1,0 +1,35 @@
+
+h1 {
+    color: blue;
+}
+
+heading_a{
+    font-size: 24px;
+    color: #c96262;
+}
+heading_b{
+    font-size: 24px;
+    color: #c96262;
+}
+
+heading_c{
+    font-size: 24px;
+    color: #c96262;
+}
+
+
+.admonition-note::before {
+    content: "🖋 "; /* 노트 아이콘 */
+    font-size: 1.2em;
+    margin-right: 0.5em;
+}
+.admonition-tip::before {
+    content: "💡 "; /* 팁 아이콘 */
+    font-size: 1.2em;
+    margin-right: 0.5em;
+}
+.admonition-warning::before {
+    content: "⚠ "; /* 경고 아이콘 */
+    font-size: 1.2em;
+    margin-right: 0.5em;
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rco123.github.io/man_jetson_nano_bd/ch01/connect/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>1.2 보드 IP 연결 - 젯슨나노보드4G</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra_css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "1.2 \ubcf4\ub4dc IP \uc5f0\uacb0";
+        var mkdocs_page_input_path = "ch01\\connect.md";
+        var mkdocs_page_url = "/man_jetson_nano_bd/ch01/connect/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 젯슨나노보드4G
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">1.젯슨나노보드</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../intro_jetson_nano_bd/">1.1 소개</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">1.2 보드 IP 연결</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#usb">USB 보드 연결</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wifi-address">Wifi Address 설정</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../program/">1.3 연결프로그램</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">2. 프로그램 작성</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch02/python/">2.1 파이썬</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch02/pytorch/">2.2 파이토치</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch02/tf/">2.3 텐스플로우</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">3. 지원기능</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch03/share/">3.1 파일공유</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch03/camera/">3.2 카메라</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ch03/ip/">3.3 IP주소</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">젯슨나노보드4G</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">1.젯슨나노보드</li>
+      <li class="breadcrumb-item active">1.2 보드 IP 연결</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ip">보드 IP 연결</h1>
+<p><center>
+<img  src="../../ch01/imgs/usb_conn.png"  width="300"  height="400" /> 
+</center></p>
+<h2 id="usb">USB 보드 연결</h2>
+<p>USB 유선 케이블 연결을 사용하면 (노트북) PC에서 Jetson nano Board의 login 터미널에 네트워크를 통하여 접속할 수 있습니다.</p>
+<p>가상 이더넷 어댑터 기능을 통해 Jetson Board는 PC와 Point-to-Point 네트워크를 연결할 수 있습니다.
+Jetson Board의 Default 고정 IP는 ”192.168.55.1“ 입니다. </p>
+<p>Jetson Board외 연결되는 PC의 IP를 192.168.55.100로 설정하고 가상 로컬 이더넷 네트워크를 형성합니다. 따라서 Jetson Nanod의  계정 (사용 이름:nano 및 암호 사용:1111)을 생성한 경우, 네트워크 Jetson 보드의 접속 IP를 192.168.55.1을 지정하여 PC에서 SSH를 이용하여 Jetson Board로 로그인 할 수 있습니다.</p>
+<p><strong>나노 보드 USB IP 접속</strong></p>
+<ul>
+<li><strong>login ID</strong> : jetson</li>
+<li><strong>PASSWD</strong> : 1111</li>
+<li><strong>IP ADDRESS</strong> : 192.168.55.1</li>
+</ul>
+<h2 id="wifi-address">Wifi Address 설정</h2>
+<p>USB를 컴퓨터와 연결 후, 192.168.55.1 을 통하여 웹브라우즈로 iblock을 브라우즈 실행</p>
+<p><strong>iBlock 연결</strong></p>
+<p><center>
+<img  src="../../ch01/imgs/iblock.png"  width="600"  height="400" /> 
+</center></p>
+<p><strong>주소 입력후 연결</strong></p>
+<p>웹브라우즈를 열고, 주소를 입력하여 젯슨보드에 접속한다.</p>
+<p><center>
+<img  src="../../ch01/imgs/ipadd01.png"  width="600"  height="400" /> 
+</center></p>
+<p>iBlock 의 툴박스에서 </p>
+<p><code>코드 =&gt; 인터넷 =&gt; 와이파이 설정</code> 블록을 작업창으로 가지고 와서 실행을 한다.</p>
+<p><center>
+<img  src="../../ch01/imgs/ipsetting.png"  width="600"  height="400" /> 
+</center></p>
+<p>사용중인 무선 공유기의 <code>SSID</code> , <code>비밀번호</code>를 입력하여 블록 프로그램을 수행한다.</p>
+<p><center>
+<img  src="../../ch01/imgs/ipsetblk.png"  width="600"  height="400" /> 
+</center></p>
+<p><center>
+<img  src="../../ch01/imgs/ipblk.png"  width="600"  height="400" /> 
+</center></p>
+<p><strong>프로그램 실행 및 결과 확인</strong></p>
+<p><code>실행하기</code> 버턴을 클릭한다. 블록으로 구성된 프로그램이 실행되고, 보드의 무선 IP를 설정한다.</p>
+<p><center>
+<img  src="../../ch01/imgs/iprun.png"  width="600"  height="400" /> 
+</center></p>
+<p><center>
+<img  src="../../ch01/imgs/ipresult.png"  width="600"  height="400" /> 
+</center></p>
+<p>무선이 연결되면, USB 케이블을 제거하고, 새로 연결된 무선랜 IP를 이용하여 보드에 접속한다.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../intro_jetson_nano_bd/" class="btn btn-neutral float-left" title="1.1 소개"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../program/" class="btn btn-neutral float-right" title="1.3 연결프로그램">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../intro_jetson_nano_bd/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../program/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
